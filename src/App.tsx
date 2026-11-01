@@ -1,10 +1,10 @@
-import type { SpotDialog } from "./cases/spots/componests/spot-dialog"
+import { Header } from "./components/layout/header"
 
 function App() {
 
   return (
     <>
-      <SpotDialog />  
+      <Header />
     </>
   )
 }
