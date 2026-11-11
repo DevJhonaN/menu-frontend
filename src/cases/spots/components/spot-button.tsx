@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@base-ui/react";
 import { MapPin } from "lucide-react";
 import { SpotDialog } from "./spot-dialog";
 import { useState } from "react";
@@ -9,14 +9,14 @@ export function SpotButton(){
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const [selectedSpot, setSelectedSpot] = useState<SpotDTO | null>(() => {
-      const spotStorage = localStorage.getItem('spot')
-      return spotStorage ? JSON.parse(spotStorage) : null;
+        const spotStorage = localStorage.getItem('spot')
+        return spotStorage ? JSON.parse(spotStorage) : null;
     });
 
-    function heandleSelect(spot: SpotDTO){
-      localStorage.setItem('spot', JSON.stringify(spot));
-      setSelectedSpot(spot);
-      setDialogOpen(false);
+    function hendleSelect(spot: SpotDTO){
+        localStorage.setItem('spot', JSON.stringify(spot));
+        setSelectedSpot(spot);
+        setDialogOpen(false);
     }
 
     return (
@@ -26,14 +26,13 @@ export function SpotButton(){
             onClick={() => setDialogOpen(true)}
             >
                 <MapPin className="size-6" />
-                {selectedSpot ? selectedSpot.name : "Selecionar Mesa"}
-                Selecionar mesa
+                { selectedSpot ? selectedSpot.name : 'Selecionar mesa' }
             </Button>
 
             <SpotDialog 
-              open={dialogOpen}
-              onSelect={heandleSelect}
-              selectedSpotId={selectedSpot?.id}
+                open={dialogOpen}  
+                onSelect={hendleSelect}
+                selectedSpotId={selectedSpot?.id}
             />
         </div>
     )
