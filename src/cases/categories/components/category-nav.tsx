@@ -20,7 +20,7 @@ export function CategoryNav() {
           className="relative"
           >
             <Link
-              to={`/products?category=${category.id}`}
+              to={`/products?categoryId=${category.id}`}
               className={cn(
                 'relative flex w-full items-center px-5 py-5 gap-3',
                 'font-menu text-lg font-semibold uppercase trecking-tight',

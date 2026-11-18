@@ -20,9 +20,9 @@ export function SpotButton(){
     }
 
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-end">
             <Button
-            className="flex cursor-pointer flex-col items-center gap-1 rounded-2xl px-6 py-4 text-brand-foreground transition-colors hover:bg-primary hover:text-brand-foreground"
+            className="flex cursor-pointer flex-col items-center gap-1 rounded-2xl border-2 border-[#B86A2C] bg-[#B86A2C] px-6 py-4 text-white transition-colors hover:bg-[#a55d25] hover:text-white"
             onClick={() => setDialogOpen(true)}
             >
                 <MapPin className="size-6" />
